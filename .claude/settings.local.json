@@ -7,7 +7,10 @@
       "Bash(ls:*)",
       "Bash(pnpm build:*)",
       "WebFetch(domain:cdn.hackclub.com)",
-      "WebFetch(domain:user-cdn.hackclub-assets.com)"
+      "WebFetch(domain:user-cdn.hackclub-assets.com)",
+      "Bash(du:*)",
+      "Bash(xargs:*)",
+      "Bash(identify additional*.png footer*.png campfire*.png campfire*.jpg daydream*.png daydream*.jpg gone-loopin.png deadbeat.png bitdropper.png deathleap.png)"
     ]
   },
   "enabledPlugins": {

@@ -14,14 +14,14 @@
 			title: 'prode dies',
 			authors: [{ name: 'Herby', age: 16, location: 'Canada' }],
 			description: 'A visual novel about a teenager trying to solve their own murder.',
-			image: '/images/prode-dies.png', thumbnail: '/images/prode-dies.png',
+			image: '/images/prode-dies.webp', thumbnail: '/images/prode-dies.webp',
 			playUrl: 'https://herbeon.itch.io/prode-dies', color: [106, 86, 191]
 		},
 		{
 			title: 'Specter',
 			authors: [{ name: 'Yessa', age: 18, location: 'Philippines' }],
 			description: 'A platformer, where the ghost of your past run can help you finish the level or slow you down.',
-			image: '/images/specter.png', thumbnail: '/images/specter.png',
+			image: '/images/specter.webp', thumbnail: '/images/specter.webp',
 			playUrl: 'https://shaaarkai.itch.io/specter', color: [191, 105, 86]
 		},
 		{
@@ -32,7 +32,7 @@
 				{ name: 'Aapo', age: 17, location: 'Finland' }
 			],
 			description: 'A puzzle platformer where you ruthlessly use the characters of the world as mere tools.',
-			image: '/images/deathleap.png', thumbnail: '/images/deathleap.png',
+			image: '/images/deathleap.webp', thumbnail: '/images/deathleap.webp',
 			playUrl: 'https://qrosp-games-oy.itch.io/deathleap', color: [86, 164, 191]
 		},
 		{
@@ -43,14 +43,14 @@
 				{ name: 'Rimma', age: 15, location: 'US' }
 			],
 			description: 'A fast-paced PvP mace-swinging game where your goal is to die first.',
-			image: '/images/kamikamace.png', thumbnail: '/images/kamikamace.png',
+			image: '/images/kamikamace.webp', thumbnail: '/images/kamikamace.webp',
 			playUrl: 'https://thatotherandrew.itch.io/kamikamace', color: [191, 89, 86]
 		},
 		{
 			title: 'Voidwatch',
 			authors: [{ name: 'Malcolm', age: 18, location: 'US' }],
 			description: 'A fast-paced top-down space shooter roguelike.',
-			image: '/images/voidwatch.png', thumbnail: '/images/voidwatch.png',
+			image: '/images/voidwatch.webp', thumbnail: '/images/voidwatch.webp',
 			playUrl: 'https://store.steampowered.com/app/3764010/Voidwatch/', color: [191, 86, 96]
 		},
 		{
@@ -60,28 +60,28 @@
 				{ name: 'Agustin', age: 15, location: 'Argentina' }
 			],
 			description: 'A high-speed speedrun-focused platformer that pushes players to master momentum and precision.',
-			image: '/images/speedtickers.jpg', thumbnail: '/images/speedtickers.jpg',
+			image: '/images/speedtickers.webp', thumbnail: '/images/speedtickers.webp',
 			playUrl: 'https://juanes10201.itch.io/speedtickers', color: [86, 111, 191]
 		},
 		{
 			title: 'Bitdropper',
 			authors: [{ name: 'Mari', age: 17, location: 'US' }],
 			description: 'An arcade game — catch parts, and don\'t fall!',
-			image: '/images/bitdropper.png', thumbnail: '/images/bitdropper.png',
+			image: '/images/bitdropper.webp', thumbnail: '/images/bitdropper.webp',
 			playUrl: 'https://kiptunes.itch.io/bitdropper', color: [191, 106, 86]
 		},
 		{
 			title: 'More Scoops Plws',
 			authors: [{ name: 'Rigo', age: 17, location: 'UAE' }],
 			description: 'A game about serving scoops of ice cream to customers for points.',
-			image: '/images/more-scoops-plws.png', thumbnail: '/images/more-scoops-plws.png',
+			image: '/images/more-scoops-plws.webp', thumbnail: '/images/more-scoops-plws.webp',
 			playUrl: 'https://recsaur.itch.io/more-scoops-plws', color: [191, 86, 155]
 		},
 		{
 			title: 'Little Ducky',
 			authors: [{ name: 'Leo', age: 16, location: 'US' }],
 			description: 'An ASCII story-based exploration adventure game.',
-			image: '/images/little-ducky.png', thumbnail: '/images/little-ducky.png',
+			image: '/images/little-ducky.webp', thumbnail: '/images/little-ducky.webp',
 			playUrl: 'https://littleducky.deltea.space', color: [191, 179, 86]
 		},
 		{
@@ -92,21 +92,21 @@
 				{ name: 'Candy', age: 14, location: 'Malaysia' }
 			],
 			description: 'A story-rich turn-based battle game, made within 72 hours.',
-			image: '/images/royally-unemployed.png', thumbnail: '/images/royally-unemployed.png',
+			image: '/images/royally-unemployed.webp', thumbnail: '/images/royally-unemployed.webp',
 			playUrl: 'https://solacye.itch.io/overglade', color: [86, 146, 191]
 		},
 		{
 			title: 'Deadbeat',
 			authors: [{ name: 'Augie', age: 17, location: 'US' }],
 			description: 'A fast-paced top-down arena shooter with a rhythmic twist.',
-			image: '/images/deadbeat.png', thumbnail: '/images/deadbeat.png',
+			image: '/images/deadbeat.webp', thumbnail: '/images/deadbeat.webp',
 			playUrl: 'https://gusruben.itch.io/deadbeat', color: [191, 86, 145]
 		},
 		{
 			title: 'Gone Loopin\'',
 			authors: [{ name: 'Tongyu', age: 18, location: 'Singapore' }],
 			description: 'A game about fishing with a loop, made within 72 hours.',
-			image: '/images/gone-loopin.png', thumbnail: '/images/gone-loopin.png',
+			image: '/images/gone-loopin.webp', thumbnail: '/images/gone-loopin.webp',
 			playUrl: 'https://bucketfish.itch.io/gone-loopin', color: [86, 141, 191]
 		}
 	];
@@ -258,39 +258,39 @@
 	<div class="hero-pattern-fade"></div>
 	<div class="hero-games">
 		<!-- Top-left cluster -->
-		<img src="/images/hero-game-7.png" alt="" class="game-shot g1" />
-		<img src="/images/hero-game-8.png" alt="" class="game-shot g2" />
-		<img src="/images/hero-game-4.png" alt="" class="game-shot g3" />
+		<img src="/images/hero-game-7.webp" alt="" class="game-shot g1" />
+		<img src="/images/hero-game-8.webp" alt="" class="game-shot g2" />
+		<img src="/images/hero-game-4.webp" alt="" class="game-shot g3" />
 		<!-- Top-center-left -->
-		<img src="/images/hero-game-10.png" alt="" class="game-shot g4" />
+		<img src="/images/hero-game-10.webp" alt="" class="game-shot g4" />
 		<!-- Top-center-right -->
-		<img src="/images/hero-game-9.png" alt="" class="game-shot g5" />
+		<img src="/images/hero-game-9.webp" alt="" class="game-shot g5" />
 		<!-- Top-right cluster -->
-		<img src="/images/hero-game-11.png" alt="" class="game-shot g6" />
-		<img src="/images/hero-game-12.png" alt="" class="game-shot g7" />
-		<img src="/images/hero-game-3.png" alt="" class="game-shot g8" />
+		<img src="/images/hero-game-11.webp" alt="" class="game-shot g6" />
+		<img src="/images/hero-game-12.webp" alt="" class="game-shot g7" />
+		<img src="/images/hero-game-3.webp" alt="" class="game-shot g8" />
 		<!-- Left middle -->
-		<img src="/images/hero-game-1.png" alt="" class="game-shot g9" />
-		<img src="/images/hero-game-2.png" alt="" class="game-shot g10" />
+		<img src="/images/hero-game-1.webp" alt="" class="game-shot g9" />
+		<img src="/images/hero-game-2.webp" alt="" class="game-shot g10" />
 		<!-- Right middle -->
-		<img src="/images/hero-game-5.png" alt="" class="game-shot g11" />
-		<img src="/images/hero-game-6.png" alt="" class="game-shot g12" />
+		<img src="/images/hero-game-5.webp" alt="" class="game-shot g11" />
+		<img src="/images/hero-game-6.webp" alt="" class="game-shot g12" />
 		<!-- Left lower -->
-		<img src="/images/additional1.png" alt="" class="game-shot g19" />
+		<img src="/images/additional1.webp" alt="" class="game-shot g19" />
 		<!-- Right lower -->
-		<img src="/images/additional2.png" alt="" class="game-shot g20" />
+		<img src="/images/additional2.webp" alt="" class="game-shot g20" />
 		<!-- Top fill gaps -->
-		<img src="/images/additional3.png" alt="" class="game-shot g21" />
-		<img src="/images/additional4.png" alt="" class="game-shot g22" />
-		<img src="/images/additional5.png" alt="" class="game-shot g23" />
+		<img src="/images/additional3.webp" alt="" class="game-shot g21" />
+		<img src="/images/additional4.webp" alt="" class="game-shot g22" />
+		<img src="/images/additional5.webp" alt="" class="game-shot g23" />
 		<!-- Bottom-left (sloping inward) -->
-		<img src="/images/additional6.png" alt="" class="game-shot g13" />
-		<img src="/images/additional7.png" alt="" class="game-shot g14" />
-		<img src="/images/additional8.png" alt="" class="game-shot g15" />
+		<img src="/images/additional6.webp" alt="" class="game-shot g13" />
+		<img src="/images/additional7.webp" alt="" class="game-shot g14" />
+		<img src="/images/additional8.webp" alt="" class="game-shot g15" />
 		<!-- Bottom-right (sloping inward) -->
-		<img src="/images/additional9.png" alt="" class="game-shot g16" />
-		<img src="/images/additional10.png" alt="" class="game-shot g17" />
-		<img src="/images/additional11.png" alt="" class="game-shot g18" />
+		<img src="/images/additional9.webp" alt="" class="game-shot g16" />
+		<img src="/images/additional10.webp" alt="" class="game-shot g17" />
+		<img src="/images/additional11.webp" alt="" class="game-shot g18" />
 	</div>
 	<div class="hero-content">
 		<p class="hero-heading-top">
@@ -340,8 +340,8 @@
 			<div class="event-grid juice-grid">
 				<!-- LEFT: Two stacked photos -->
 				<div class="photo-stack">
-					<div class="stack-photo"><img src="/images/juice-7.png" alt="Juice group photo" /></div>
-					<div class="stack-photo"><img src="/images/juice-2.png" alt="Juice whiteboard" /></div>
+					<div class="stack-photo"><img src="/images/juice-7.webp" alt="Juice group photo" /></div>
+					<div class="stack-photo"><img src="/images/juice-2.webp" alt="Juice whiteboard" /></div>
 				</div>
 				<!-- Vertical divider -->
 				<div class="grid-divider">
@@ -377,18 +377,18 @@
 						</div>
 						<!-- Stickers cluster -->
 						<div class="sticker-cluster">
-							<img src="/images/sticker-holo-1.png" alt="" class="sticker s1" class:dragging={draggingSticker === 'j1'} style={stickerStyle('j1')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j1')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
-							<img src="/images/sticker-1.png" alt="" class="sticker s2" class:dragging={draggingSticker === 'j2'} style={stickerStyle('j2')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j2')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
-							<img src="/images/sticker-2.png" alt="" class="sticker s3" class:dragging={draggingSticker === 'j3'} style={stickerStyle('j3')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j3')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
-							<img src="/images/sticker-3-holo.png" alt="" class="sticker s4" class:dragging={draggingSticker === 'j4'} style={stickerStyle('j4')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j4')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/sticker-holo-1.webp" alt="" class="sticker s1" class:dragging={draggingSticker === 'j1'} style={stickerStyle('j1')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j1')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/sticker-1.webp" alt="" class="sticker s2" class:dragging={draggingSticker === 'j2'} style={stickerStyle('j2')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j2')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/sticker-2.webp" alt="" class="sticker s3" class:dragging={draggingSticker === 'j3'} style={stickerStyle('j3')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j3')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/sticker-3-holo.webp" alt="" class="sticker s4" class:dragging={draggingSticker === 'j4'} style={stickerStyle('j4')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'j4')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
 						</div>
 					</div>
 					<div class="event-photo-row">
-						<div class="row-photo"><img src="/images/juice-3.png" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-4.png" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-5.png" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-6.png" alt="" /></div>
-						<!-- <div class="row-photo"><img src="/images/juice-7.png" alt="" /></div> -->
+						<div class="row-photo"><img src="/images/juice-3.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/juice-4.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/juice-5.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/juice-6.webp" alt="" /></div>
+						<!-- <div class="row-photo"><img src="/images/juice-7.webp" alt="" /></div> -->
 					</div>
 				</div>
 			</div>
@@ -444,16 +444,16 @@
 							</div>
 						</div>
 						<div class="sticker-cluster">
-							<img src="/images/daydream-sticker-1.png" alt="" class="sticker s1" class:dragging={draggingSticker === 'd1'} style={stickerStyle('d1')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd1')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
-							<img src="/images/daydream-sticker-2.png" alt="" class="sticker s2" class:dragging={draggingSticker === 'd2'} style={stickerStyle('d2')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd2')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
-							<img src="/images/daydream-sticker-3.png" alt="" class="sticker s3" class:dragging={draggingSticker === 'd3'} style={stickerStyle('d3')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd3')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/daydream-sticker-1.webp" alt="" class="sticker s1" class:dragging={draggingSticker === 'd1'} style={stickerStyle('d1')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd1')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/daydream-sticker-2.webp" alt="" class="sticker s2" class:dragging={draggingSticker === 'd2'} style={stickerStyle('d2')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd2')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
+							<img src="/images/daydream-sticker-3.webp" alt="" class="sticker s3" class:dragging={draggingSticker === 'd3'} style={stickerStyle('d3')} draggable="false" onpointerdown={(e) => onStickerDown(e, 'd3')} onpointermove={onStickerMove} onpointerup={onStickerUp} />
 						</div>
 					</div>
 					<div class="event-photo-row">
-						<div class="row-photo"><img src="/images/daydream-2.jpg" alt="" /></div>
-						<div class="row-photo"><img src="/images/daydream-3.jpg" alt="" /></div>
-						<div class="row-photo"><img src="/images/daydream-5.jpg" alt="" /></div>
-						<!-- <div class="row-photo"><img src="/images/juice-8.png" alt="" /></div> -->
+						<div class="row-photo"><img src="/images/daydream-2.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/daydream-3.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/daydream-5.webp" alt="" /></div>
+						<!-- <div class="row-photo"><img src="/images/juice-8.webp" alt="" /></div> -->
 					</div>
 				</div>
 				<!-- Vertical divider -->
@@ -463,8 +463,8 @@
 				</div>
 				<!-- RIGHT: Two stacked photos -->
 				<div class="photo-stack">
-					<div class="stack-photo"><img src="/images/daydream-1.jpg" alt="Daydream group photo" /></div>
-					<div class="stack-photo"><img src="/images/daydream-4.jpg" alt="Daydream whiteboard" /></div>
+					<div class="stack-photo"><img src="/images/daydream-1.webp" alt="Daydream group photo" /></div>
+					<div class="stack-photo"><img src="/images/daydream-4.webp" alt="Daydream whiteboard" /></div>
 				</div>
 			</div>
 			<div class="line-dot" style="top:-4px;left:-4px;"></div>
@@ -499,7 +499,7 @@
 							<div class="corner-dot tr"></div>
 							<div class="corner-dot bl"></div>
 							<div class="corner-dot br"></div>
-							<img src="/images/campfire-flagship.jpg" alt="Campfire Flagship" />
+							<img src="/images/campfire-flagship.webp" alt="Campfire Flagship" />
 						</div>
 						<h3 class="col-title">Campfire Flagship</h3>
 						<p class="col-desc">Partnered with <a href="https://opensauce.com" target="_blank" style="text-decoration: underline">Open Sauce</a>, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.</p>
@@ -514,7 +514,7 @@
 							<div class="corner-dot tr"></div>
 							<div class="corner-dot bl"></div>
 							<div class="corner-dot br"></div>
-							<img src="/images/overglade.jpg" alt="Overglade" />
+							<img src="/images/overglade.webp" alt="Overglade" />
 						</div>
 						<h3 class="col-title">Overglade</h3>
 						<p class="col-desc">50 teenagers built games in three months, then flew to Singapore for an immersive, alternate-reality game jam over four days.</p>
@@ -529,7 +529,7 @@
 							<div class="corner-dot tr"></div>
 							<div class="corner-dot bl"></div>
 							<div class="corner-dot br"></div>
-							<img src="/images/campfire-grid.png" alt="Campfire" />
+							<img src="/images/campfire-grid.webp" alt="Campfire" />
 						</div>
 						<h3 class="col-title">Campfire Global</h3>
 						<p class="col-desc">Our largest game jam yet — 200 high school game jams in 200 cities around the world, all on the same weekend.</p>
@@ -1402,7 +1402,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: url('/images/pattern.png') repeat;
+		background: url('/images/pattern.webp') repeat;
 		background-size: 40px 40px;
 		opacity: 0.03;
 		pointer-events: none;
@@ -1796,7 +1796,7 @@
 		inset: 0;
 		background:
 			linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%),
-			url('/images/pattern.png') repeat;
+			url('/images/pattern.webp') repeat;
 		background-size: auto, 40px 40px;
 		opacity: 0.03;
 		pointer-events: none;
@@ -1932,7 +1932,7 @@
 	.footer-tile {
 		height: 200px;
 		margin-top: 40px;
-		background: url('/images/footer-tile.png') repeat-x;
+		background: url('/images/footer-tile.webp') repeat-x;
 		background-size: auto 100%;
 		background-position: center bottom;
 	}
