@@ -294,7 +294,7 @@
 	</div>
 	<div class="hero-content">
 		<p class="hero-heading-top">
-			Hack Club is where <span class="underlined">high schoolers</span><br />
+			Hack Club is where <span class="underlined">high&nbsp;schoolers</span><br />
 			go from playing games
 		</p>
 		<h1 class="hero-heading-big">to making games.</h1>
@@ -1041,14 +1041,15 @@
 	.event-grid {
 		display: grid;
 		min-height: 550px;
+		overflow: hidden;
 	}
 
 	.juice-grid {
-		grid-template-columns: 36% var(--b) 1fr;
+		grid-template-columns: 30% var(--b) 1fr;
 	}
 
 	.daydream-grid {
-		grid-template-columns: 1fr var(--b) 36%;
+		grid-template-columns: 1fr var(--b) 30%;
 	}
 
 	.grid-divider {
@@ -1060,6 +1061,8 @@
 	.photo-stack {
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
+		min-width: 0;
 	}
 
 	.stack-photo {
@@ -1075,6 +1078,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center;
 		display: block;
 	}
 
@@ -1945,6 +1949,7 @@
 		.dot-top-left, .dot-bottom-left { left: 56px; }
 		.dot-top-right, .dot-bottom-right { right: 56px; }
 		.marquee-line-left, .marquee-line-right { width: 60px; }
+		.about-blurb { margin: 0 60px; padding: 48px 40px; }
 		.hero { height: auto; min-height: 600px; padding: 100px 20px; max-height: none; }
 		.hero-heading-top { font-size: 36px; }
 		.hero-heading-big { font-size: 64px; }
@@ -1994,16 +1999,24 @@
 	}
 
 	@media (max-width: 768px) {
-		.bordered-content { margin: 0 16px; }
-		.donate-section { margin: 0 16px; }
-		.logo-strip { margin: 0 16px; }
-		.side-pattern { display: none; }
-		.border-line { display: none; }
-		.line-dot.dot-top-left, .line-dot.dot-top-right, .line-dot.dot-bottom-left, .line-dot.dot-bottom-right { display: none; }
+		/* Margins & decorative elements — 10px margins with border lines + patterns */
+		.bordered-content { margin: 0 10px; }
+		.donate-section { margin: 0 10px; }
+		.logo-strip { margin: 0 10px; }
+		.left-pattern { right: calc(100% - 10px); }
+		.right-pattern { left: calc(100% - 10px); }
+		.border-line.left-line { left: 10px; }
+		.border-line.right-line { right: 10px; }
+		.dot-top-left, .dot-bottom-left { left: 6px; }
+		.dot-top-right, .dot-bottom-right { right: 6px; }
+		.marquee-line-left, .marquee-line-right { width: 10px; }
 		.games-heading-area::before, .games-heading-area::after,
 		.donate-heading-area::before, .donate-heading-area::after { display: none; }
-		.marquee-line-left, .marquee-line-right { display: none; }
 
+		/* About blurb */
+		.about-blurb { margin: 0; padding: 32px 20px; font-size: 16px; }
+
+		/* Hero */
 		.hero { height: 100svh; min-height: 0; max-height: none; padding: 0 20px; }
 		.hero-content { justify-content: center; padding-bottom: 0; }
 		.hero-heading-top { font-size: 26px; }
@@ -2034,6 +2047,11 @@
 		.g22 { display: block; left: 100px;  top: -60px;  transform: rotate(3deg);  }
 		.g23 { display: block; right: -40px; top: -40px;  transform: rotate(5deg);  }
 
+		/* Juice/Daydream reorder — text+video first */
+		.juice-grid .event-right-col { order: 0; }
+		.juice-grid .grid-divider { order: 1; }
+		.juice-grid .photo-stack { order: 2; }
+
 		.event-columns { flex-direction: column; }
 		.daydream-columns { flex-direction: column; }
 		.video-thumb img, .video-thumb iframe { width: 100%; height: auto; }
@@ -2043,27 +2061,41 @@
 		.row-photo { min-width: 50%; }
 		.row-photo img { height: 120px; }
 
-		.three-col-section { margin-left: -16px; margin-right: -16px; }
-		.col-inner { padding: 16px 16px 24px; }
-		.col-title { font-size: 28px; }
+		/* Marquee — more vertical padding, smaller fade gradients */
+		.marquee-clip { padding: 28px 0; }
+		.marquee-fade { width: 60px; }
+
+		/* Three-col events */
+		.three-col-section { margin-left: -10px; margin-right: -10px; }
+		.col-inner { padding: 16px 24px 24px; }
+		.col-title { font-size: 32px; }
 		.col-desc { font-size: 16px; }
 		.col-thumb img { width: 100%; }
 
-		.games-heading { font-size: 32px; }
+		/* Games heading — larger font, less padding */
+		.games-heading { font-size: 38px; }
+		.games-heading-area { padding: 72px 20px 40px; }
 		.games-sub { font-size: 16px; }
 		.game-nav { height: 70px; }
 		.nav-arrow-cell { width: 80px; }
 
-		.donate-heading { font-size: 32px; }
+		/* Donate */
+		.donate-heading { font-size: 36px; }
 		.donate-col-inner { padding: 32px 24px; }
 		.donate-col-title { font-size: 26px; }
 		.donate-col-body { font-size: 16px; }
 
-		.footer-top { padding: 32px 20px 24px; }
-		.footer-tagline { font-size: 18px; }
-		.footer-links a { font-size: 16px; }
-		.footer-tile { height: 120px; margin-top: 24px; }
+		/* Footer — normalized font sizes */
+		.footer-top { padding: 32px 20px 20px; }
+		.footer-tagline { font-size: 16px; }
+		.footer-links a { font-size: 15px; }
+		.footer-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
+		.footer-dot { font-size: 20px; }
+		.footer-credit { font-size: 14px; margin-top: 12px; }
+		.footer-tile { height: 100px; margin-top: 16px; }
 
-		.logo-strip { grid-template-columns: repeat(3, 1fr); }
+		/* Logo strip — 5 squares, hide indigo + violet */
+		.logo-strip { grid-template-columns: repeat(5, 1fr); }
+		.logo-cell:nth-child(n+6) { display: none; }
 	}
 </style>

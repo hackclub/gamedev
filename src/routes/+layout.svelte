@@ -62,6 +62,7 @@
 		color: #000;
 		background: #fff;
 		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
 	}
 
 	:global(a) {
