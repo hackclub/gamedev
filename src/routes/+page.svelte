@@ -330,7 +330,7 @@
 		<div class="line-dot" style="top:-5px;right:-5px;"></div>
 		<div class="line-dot" style="bottom:-5px;left:-5px;"></div>
 		<div class="line-dot" style="bottom:-5px;right:-5px;"></div>
-		<p><a href="https://hackclub.com" target="_blank">Hack Club</a> is a global nonprofit movement of 140,000 teenagers making cool stuff together. Every couple of weeks, we run events to empower and encourage students to dive deeper into game development.<br><br>Share this page with <a href="https://hack.club/gamedev" style="text-decoration: underline; font-weight: normal">hack.club/gamedev</a>.</p>
+		<p><a href="https://hackclub.com" target="_blank">Hack Club</a> is a global nonprofit movement of 140,000 teenagers making cool stuff together. Every couple of weeks, we run events to empower and encourage students to dive deeper into game development.<br><br>Share this page with <a href="https://hack.club/games" style="text-decoration: underline; font-weight: normal">hack.club/games</a>.</p>
 	</div>
 
 	<div class="bordered-content">
