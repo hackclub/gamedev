@@ -5,6 +5,24 @@
 <svelte:head>
 	<title>Hack Club Game Dev</title>
 	<meta name="description" content="Hack Club is where high schoolers go from playing games to making games." />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Hack Club Game Dev" />
+	<meta property="og:description" content="Hack Club is where high schoolers go from playing games to making games." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://gamedev.hackclub.com" />
+	<meta property="og:image" content="https://gamedev.hackclub.com/ogimg.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:site_name" content="Hack Club Game Dev" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Hack Club Game Dev" />
+	<meta name="twitter:description" content="Hack Club is where high schoolers go from playing games to making games." />
+	<meta name="twitter:image" content="https://gamedev.hackclub.com/ogimg.png" />
+
+	<meta name="theme-color" content="#000000" />
 	{@html '<style>@property --glow-r{syntax:"<number>";inherits:true;initial-value:0}@property --glow-g{syntax:"<number>";inherits:true;initial-value:0}@property --glow-b{syntax:"<number>";inherits:true;initial-value:0}</style>'}
 </svelte:head>
 
