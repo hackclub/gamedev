@@ -255,29 +255,43 @@
 <!-- HERO SECTION -->
 <section class="hero">
 	<div class="hero-pattern"></div>
+	<div class="hero-pattern-fade"></div>
 	<div class="hero-games">
+		<!-- Top-left cluster -->
 		<img src="/images/hero-game-7.png" alt="" class="game-shot g1" />
 		<img src="/images/hero-game-8.png" alt="" class="game-shot g2" />
-		<img src="/images/hero-game-9.png" alt="" class="game-shot g3" />
-		<img src="/images/hero-game-11.png" alt="" class="game-shot g4" />
-		<img src="/images/hero-game-12.png" alt="" class="game-shot g5" />
-		<img src="/images/hero-game-1.png" alt="" class="game-shot g6" />
-		<img src="/images/hero-game-2.png" alt="" class="game-shot g7" />
-		<img src="/images/hero-game-5.png" alt="" class="game-shot g8" />
-		<img src="/images/hero-game-6.png" alt="" class="game-shot g9" />
-		<img src="/images/hero-game-3.png" alt="" class="game-shot g10" />
-		<img src="/images/hero-game-10.png" alt="" class="game-shot g11" />
-		<img src="/images/hero-game-4.png" alt="" class="game-shot g12" />
-		<img src="/images/hero-game-1.png" alt="" class="game-shot g13" />
-		<img src="/images/hero-game-5.png" alt="" class="game-shot g14" />
-		<img src="/images/hero-game-9.png" alt="" class="game-shot g15" />
-		<img src="/images/hero-game-3.png" alt="" class="game-shot g16" />
-		<img src="/images/hero-game-6.png" alt="" class="game-shot g17" />
-		<img src="/images/hero-game-11.png" alt="" class="game-shot g18" />
-		<img src="/images/hero-game-2.png" alt="" class="game-shot g19" />
-		<img src="/images/hero-game-4.png" alt="" class="game-shot g20" />
+		<img src="/images/hero-game-4.png" alt="" class="game-shot g3" />
+		<!-- Top-center-left -->
+		<img src="/images/hero-game-10.png" alt="" class="game-shot g4" />
+		<!-- Top-center-right -->
+		<img src="/images/hero-game-9.png" alt="" class="game-shot g5" />
+		<!-- Top-right cluster -->
+		<img src="/images/hero-game-11.png" alt="" class="game-shot g6" />
+		<img src="/images/hero-game-12.png" alt="" class="game-shot g7" />
+		<img src="/images/hero-game-3.png" alt="" class="game-shot g8" />
+		<!-- Left middle -->
+		<img src="/images/hero-game-1.png" alt="" class="game-shot g9" />
+		<img src="/images/hero-game-2.png" alt="" class="game-shot g10" />
+		<!-- Right middle -->
+		<img src="/images/hero-game-5.png" alt="" class="game-shot g11" />
+		<img src="/images/hero-game-6.png" alt="" class="game-shot g12" />
+		<!-- Left lower -->
+		<img src="/images/hero-game-7.png" alt="" class="game-shot g19" />
+		<!-- Right lower -->
+		<img src="/images/hero-game-11.png" alt="" class="game-shot g20" />
+		<!-- Top fill gaps -->
+		<img src="/images/hero-game-2.png" alt="" class="game-shot g21" />
+		<img src="/images/hero-game-6.png" alt="" class="game-shot g22" />
+		<img src="/images/hero-game-12.png" alt="" class="game-shot g23" />
+		<!-- Bottom-left (sloping inward) -->
+		<img src="/images/hero-game-4.png" alt="" class="game-shot g13" />
+		<img src="/images/hero-game-10.png" alt="" class="game-shot g14" />
+		<img src="/images/hero-game-1.png" alt="" class="game-shot g15" />
+		<!-- Bottom-right (sloping inward) -->
+		<img src="/images/hero-game-5.png" alt="" class="game-shot g16" />
+		<img src="/images/hero-game-9.png" alt="" class="game-shot g17" />
+		<img src="/images/hero-game-3.png" alt="" class="game-shot g18" />
 	</div>
-	<div class="hero-vignette"></div>
 	<div class="hero-content">
 		<p class="hero-heading-top">
 			Hack Club is where <span class="underlined">high schoolers</span><br />
@@ -287,10 +301,10 @@
 		<div class="hero-cta">
 			<a href="#donate" class="btn-pill">Donate</a>
 		</div>
-		<p class="hero-join">Teenager? Join Hack Club!</p>
+		<a href="https://hackclub.com/slack" class="hero-join">Teenager? Join Hack Club!</a>
 		<div class="hero-arrow">
-			<svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-				<path d="M2 2L20 20L38 2" stroke="#ec3750" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+			<svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+				<path d="M2 2L20 16L38 2" stroke="#ec3750" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</div>
 	</div>
@@ -764,10 +778,16 @@
 	.hero-pattern {
 		position: absolute;
 		inset: 0;
-		background: url('/images/pattern.png') repeat;
+		background: url('/images/patterns/pattern5.svg') repeat;
 		background-size: 40px 40px;
-		opacity: 0.03;
-		transform: rotate(180deg);
+		opacity: 0.025;
+		pointer-events: none;
+	}
+
+	.hero-pattern-fade {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, #fff 0%, transparent 100%);
 		pointer-events: none;
 	}
 
@@ -775,46 +795,48 @@
 
 	.game-shot {
 		position: absolute;
-		width: 220px;
-		height: 165px;
-		border: 3px solid #fff;
+		width: 300px;
+		height: 225px;
+		border: 5px solid #fff;
 		border-radius: 8px;
 		object-fit: cover;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 	}
 
-	/* Left column – far left */
-	.g1  { left: -70px;  top: 60px;   transform: rotate(3deg);    opacity: 0.7; }
-	.g2  { left: -60px;  top: 300px;  transform: rotate(15deg);   opacity: 0.85; }
-	.g3  { left: -80px;  top: 540px;  transform: rotate(-3deg);   opacity: 0.9; }
-	.g4  { left: -60px;  top: 760px;  transform: rotate(2deg);    opacity: 0.95; }
-	/* Right column – far right */
-	.g5  { right: -70px; top: 60px;   transform: rotate(-13deg);  opacity: 0.6; }
-	.g6  { right: -60px; top: 300px;  transform: rotate(-11deg);  opacity: 0.8; }
-	.g7  { right: -80px; top: 540px;  transform: rotate(11deg);   opacity: 0.9; }
-	.g8  { right: -60px; top: 760px;  transform: rotate(-9deg);   opacity: 0.95; }
-	/* Center-left column */
-	.g9  { left: 120px;  top: -50px;  transform: rotate(-19deg);  opacity: 0.18; }
-	.g10 { left: 150px;  top: 200px;  transform: rotate(7deg);    opacity: 0.14; }
-	.g11 { left: 130px;  top: 450px;  transform: rotate(5deg);    opacity: 0.1; }
-	/* Center-right column */
-	.g12 { right: 120px; top: -50px;  transform: rotate(9deg);    opacity: 0.18; }
-	.g13 { right: 150px; top: 200px;  transform: rotate(-6deg);   opacity: 0.14; }
-	.g14 { right: 130px; top: 450px;  transform: rotate(-7deg);   opacity: 0.1; }
-	/* Bottom scatter */
-	.g15 { left: 80px;   bottom: -20px; transform: rotate(9deg);  opacity: 0.9; }
-	.g16 { right: 80px;  bottom: -20px; transform: rotate(-8deg); opacity: 0.9; }
-	.g17 { left: 350px;  bottom: 30px;  transform: rotate(12deg); opacity: 0.5; }
-	.g18 { right: 350px; bottom: 30px;  transform: rotate(-12deg);opacity: 0.5; }
-	.g19 { left: 540px;  bottom: -30px; transform: rotate(-2deg); opacity: 0.3; }
-	.g20 { right: 540px; bottom: -30px; transform: rotate(3deg);  opacity: 0.3; }
-
-	.hero-vignette {
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(ellipse 55% 50% at 50% 42%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.89) 55%, rgba(255,255,255,0) 100%);
-		pointer-events: none;
-		z-index: 1;
-	}
+	/* Top-left cluster */
+	.g1  { left: -60px;  top: -30px;  transform: rotate(-8deg);  z-index: 2; }
+	.g2  { left: 110px;  top: -50px;  transform: rotate(5deg);   z-index: 1; }
+	.g3  { left: 10px;   top: 100px;  transform: rotate(3deg);   z-index: 3; }
+	/* Top-center-left */
+	.g4  { left: 28%;    top: -60px;  transform: rotate(-3deg);  z-index: 1; }
+	/* Top-center-right */
+	.g5  { right: 28%;   top: -55px;  transform: rotate(-4deg);  z-index: 1; }
+	/* Top-right cluster */
+	.g6  { right: -40px; top: -40px;  transform: rotate(8deg);   z-index: 2; }
+	.g7  { right: 120px; top: -50px;  transform: rotate(2deg);   z-index: 1; }
+	.g8  { right: -60px; top: 110px;  transform: rotate(-6deg);  z-index: 3; }
+	/* Left middle */
+	.g9  { left: -80px;  top: 35%;    transform: rotate(-5deg);  z-index: 2; }
+	.g10 { left: -40px;  top: 52%;    transform: rotate(4deg);   z-index: 3; }
+	/* Right middle */
+	.g11 { right: -80px; top: 35%;    transform: rotate(-3deg);  z-index: 2; }
+	.g12 { right: -40px; top: 52%;    transform: rotate(8deg);   z-index: 3; }
+	/* Bottom-left (sloping inward) */
+	.g13 { left: -50px;  bottom: -10px; transform: rotate(6deg);  z-index: 3; }
+	.g14 { left: 100px;  bottom: -30px; transform: rotate(-4deg); z-index: 4; }
+	.g15 { left: 260px;  bottom: -50px; transform: rotate(3deg);  z-index: 3; }
+	/* Bottom-right (sloping inward) */
+	.g16 { right: -50px; bottom: -10px; transform: rotate(4deg);  z-index: 3; }
+	.g17 { right: 100px; bottom: -30px; transform: rotate(-6deg); z-index: 4; }
+	.g18 { right: 260px; bottom: -50px; transform: rotate(3deg);  z-index: 3; }
+	/* Left lower (between middle and bottom) */
+	.g19 { left: 120px;  top: 68%;     transform: rotate(7deg);   z-index: 3; }
+	/* Right lower (between middle and bottom) */
+	.g20 { right: 120px; top: 68%;     transform: rotate(-3deg);  z-index: 3; }
+	/* Top fill gaps */
+	.g21 { left: 22%;    top: -160px;  transform: rotate(-5deg);  z-index: 2; }
+	.g22 { left: 44%;    top: -170px;  transform: rotate(2deg);   z-index: 2; }
+	.g23 { right: 22%;   top: -155px;  transform: rotate(-6deg);  z-index: 2; }
 
 	.hero-content {
 		position: relative;
@@ -873,7 +895,7 @@
 		font-family: 'Phantom Sans', sans-serif;
 		font-size: 20px;
 		color: #000;
-		background: transparent;
+		background: #fff;
 		cursor: pointer;
 		transition: background 0.2s, color 0.2s;
 		text-decoration: none;
@@ -882,13 +904,25 @@
 	.btn-pill:hover { background: #000; color: #fff; }
 
 	.hero-join {
-		font-size: 28px;
+		font-size: 20px;
 		opacity: 0.6;
-		margin-bottom: 24px;
+		margin-top: 16px;
+		margin-bottom: 32px;
+		text-decoration: underline;
+		color: inherit;
 	}
 
 	.hero-arrow {
 		opacity: 0.8;
+		position: relative;
+		top: 32px;
+		animation: hero-arrow-float 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+	}
+
+	@keyframes hero-arrow-float {
+		0% { transform: translateY(0); }
+		50% { transform: translateY(5px); }
+		100% { transform: translateY(0); }
 	}
 
 	/* ===== ABOUT BLURB ===== */
@@ -1914,8 +1948,7 @@
 		.hero { height: auto; min-height: 600px; padding: 100px 20px; max-height: none; }
 		.hero-heading-top { font-size: 36px; }
 		.hero-heading-big { font-size: 64px; }
-		.hero-join { font-size: 22px; }
-		.game-shot { width: 240px; height: 180px; }
+		.hero-join { font-size: 14px; }
 
 		.juice-grid, .daydream-grid { grid-template-columns: 1fr; }
 		.grid-divider { height: var(--b); }
@@ -1929,8 +1962,10 @@
 		.marquee-section { height: auto; }
 		.marquee-clip { padding: 20px 0; }
 
+		.three-col-section { margin-left: -60px; margin-right: -60px; }
 		.three-col-grid { grid-template-columns: 1fr; }
 		.col-divider-v { height: var(--b); width: 100%; }
+		.col-inner { padding: 20px 24px 32px; }
 		.col-title { font-size: 36px; }
 		.col-desc { font-size: 18px; }
 
@@ -1969,11 +2004,35 @@
 		.donate-heading-area::before, .donate-heading-area::after { display: none; }
 		.marquee-line-left, .marquee-line-right { display: none; }
 
+		.hero { height: 100svh; min-height: 0; max-height: none; padding: 0 20px; }
+		.hero-content { justify-content: center; padding-bottom: 0; }
 		.hero-heading-top { font-size: 26px; }
 		.hero-heading-big { font-size: 44px; }
-		.hero-join { font-size: 18px; }
-		.btn-pill { width: 180px; height: 60px; font-size: 18px; }
-		.game-shot { width: 160px; height: 120px; }
+		.hero-join { font-size: 14px; }
+		.btn-pill { width: 160px; height: 48px; font-size: 16px; }
+
+		/* Mobile game images */
+		.game-shot {
+			width: 160px;
+			height: 120px;
+			border: 3px solid #fff;
+		}
+		/* Hide desktop positions, use mobile layout */
+		.g1, .g2, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12,
+		.g19, .g20, .g21, .g22, .g23 { display: none; }
+
+		/* Bottom-left — slope outward going up */
+		.g13 { display: block; left: -30px;  bottom: -30px;  transform: rotate(5deg);  }
+		.g14 { display: block; left: -70px;  bottom: 70px;   transform: rotate(-3deg); }
+		.g15 { display: block; left: -110px; bottom: 170px;  transform: rotate(4deg);  }
+		/* Bottom-right — slope outward going up */
+		.g16 { display: block; right: -30px; bottom: -30px;  transform: rotate(-4deg); }
+		.g17 { display: block; right: -70px; bottom: 70px;   transform: rotate(6deg);  }
+		.g18 { display: block; right: -110px;bottom: 170px;  transform: rotate(-3deg); }
+		/* Come back in at top */
+		.g21 { display: block; left: -40px;  top: -40px;  transform: rotate(-6deg); }
+		.g22 { display: block; left: 100px;  top: -60px;  transform: rotate(3deg);  }
+		.g23 { display: block; right: -40px; top: -40px;  transform: rotate(5deg);  }
 
 		.event-columns { flex-direction: column; }
 		.daydream-columns { flex-direction: column; }
@@ -1984,6 +2043,8 @@
 		.row-photo { min-width: 50%; }
 		.row-photo img { height: 120px; }
 
+		.three-col-section { margin-left: -16px; margin-right: -16px; }
+		.col-inner { padding: 16px 16px 24px; }
 		.col-title { font-size: 28px; }
 		.col-desc { font-size: 16px; }
 		.col-thumb img { width: 100%; }
