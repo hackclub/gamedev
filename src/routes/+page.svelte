@@ -276,21 +276,21 @@
 		<img src="/images/hero-game-5.png" alt="" class="game-shot g11" />
 		<img src="/images/hero-game-6.png" alt="" class="game-shot g12" />
 		<!-- Left lower -->
-		<img src="/images/hero-game-7.png" alt="" class="game-shot g19" />
+		<img src="/images/additional1.png" alt="" class="game-shot g19" />
 		<!-- Right lower -->
-		<img src="/images/hero-game-11.png" alt="" class="game-shot g20" />
+		<img src="/images/additional2.png" alt="" class="game-shot g20" />
 		<!-- Top fill gaps -->
-		<img src="/images/hero-game-2.png" alt="" class="game-shot g21" />
-		<img src="/images/hero-game-6.png" alt="" class="game-shot g22" />
-		<img src="/images/hero-game-12.png" alt="" class="game-shot g23" />
+		<img src="/images/additional3.png" alt="" class="game-shot g21" />
+		<img src="/images/additional4.png" alt="" class="game-shot g22" />
+		<img src="/images/additional5.png" alt="" class="game-shot g23" />
 		<!-- Bottom-left (sloping inward) -->
-		<img src="/images/hero-game-4.png" alt="" class="game-shot g13" />
-		<img src="/images/hero-game-10.png" alt="" class="game-shot g14" />
-		<img src="/images/hero-game-1.png" alt="" class="game-shot g15" />
+		<img src="/images/additional6.png" alt="" class="game-shot g13" />
+		<img src="/images/additional7.png" alt="" class="game-shot g14" />
+		<img src="/images/additional8.png" alt="" class="game-shot g15" />
 		<!-- Bottom-right (sloping inward) -->
-		<img src="/images/hero-game-5.png" alt="" class="game-shot g16" />
-		<img src="/images/hero-game-9.png" alt="" class="game-shot g17" />
-		<img src="/images/hero-game-3.png" alt="" class="game-shot g18" />
+		<img src="/images/additional9.png" alt="" class="game-shot g16" />
+		<img src="/images/additional10.png" alt="" class="game-shot g17" />
+		<img src="/images/additional11.png" alt="" class="game-shot g18" />
 	</div>
 	<div class="hero-content">
 		<p class="hero-heading-top">
@@ -1938,6 +1938,16 @@
 	}
 
 	/* ===== RESPONSIVE ===== */
+	/* Push hero images outward when viewport makes them crowd the hero text */
+	@media (max-width: 1500px) and (min-width: 769px) {
+		.g1, .g2, .g3, .g4, .g9, .g10, .g13, .g14, .g15, .g19, .g21, .g22 {
+			translate: -60px 0;
+		}
+		.g5, .g6, .g7, .g8, .g11, .g12, .g16, .g17, .g18, .g20, .g23 {
+			translate: 60px 0;
+		}
+	}
+
 	@media (max-width: 1200px) {
 		.bordered-content { margin: 0 60px; }
 		.donate-section { margin: 0 60px; }
@@ -1950,17 +1960,32 @@
 		.dot-top-right, .dot-bottom-right { right: 56px; }
 		.marquee-line-left, .marquee-line-right { width: 60px; }
 		.about-blurb { margin: 0 60px; padding: 48px 40px; }
-		.hero { height: auto; min-height: 600px; padding: 100px 20px; max-height: none; }
+		.hero { height: auto; min-height: 600px; padding: 200px 20px 20px; max-height: none; }
 		.hero-heading-top { font-size: 36px; }
 		.hero-heading-big { font-size: 64px; }
 		.hero-join { font-size: 14px; }
+
+		/* Top images — nudge up */
+		.g21 { top: -200px; }
+		.g22 { top: -210px; }
+		.g23 { top: -195px; }
+		.g4  { top: -120px; }
+		.g5  { top: -130px; }
+		.g2  { top: -70px; }
+		.g7  { top: -70px; }
+
+		/* Bottom row — nudge down */
+		.g13 { bottom: -50px; }
+		.g14 { bottom: -100px; }
+		.g15 { bottom: -90px; }
+		.g16 { bottom: -50px; }
+		.g17 { bottom: -100px; }
+		.g18 { bottom: -90px; }
 
 		.juice-grid, .daydream-grid { grid-template-columns: 1fr; }
 		.grid-divider { height: var(--b); }
 		.photo-stack { max-height: 400px; }
 
-		.event-columns { flex-direction: column; }
-		.daydream-columns { flex-direction: column; }
 		.event-title { font-size: 42px; }
 		.event-desc { font-size: 18px; }
 		.video-thumb img, .video-thumb iframe { width: 280px; height: 160px; }
@@ -1970,9 +1995,10 @@
 		.three-col-section { margin-left: -60px; margin-right: -60px; }
 		.three-col-grid { grid-template-columns: 1fr; }
 		.col-divider-v { height: var(--b); width: 100%; }
-		.col-inner { padding: 20px 24px 32px; }
+		.col-inner { padding: 24px 60px 32px; text-align: center; }
+		.col-thumb { max-width: 500px; margin-left: auto; margin-right: auto; }
+		.col-desc { font-size: 18px; max-width: 500px; margin-left: auto; margin-right: auto; }
 		.col-title { font-size: 36px; }
-		.col-desc { font-size: 18px; }
 
 		.games-carousel { width: auto; height: auto; display: flex; justify-content: center; }
 		.side-card { display: none !important; }
