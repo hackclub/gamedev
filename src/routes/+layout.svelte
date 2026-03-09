@@ -3,8 +3,9 @@
 </script>
 
 <svelte:head>
-	<title>Hack Club Games</title>
+	<title>Hack Club Game Dev</title>
 	<meta name="description" content="Hack Club is where high schoolers go from playing games to making games." />
+	{@html '<style>@property --glow-r{syntax:"<number>";inherits:true;initial-value:0}@property --glow-g{syntax:"<number>";inherits:true;initial-value:0}@property --glow-b{syntax:"<number>";inherits:true;initial-value:0}</style>'}
 </svelte:head>
 
 {@render children()}
@@ -51,11 +52,15 @@
 		box-sizing: border-box;
 	}
 
+	:global(html) {
+		background: #000;
+		overflow-x: hidden;
+	}
+
 	:global(body) {
 		font-family: 'Phantom Sans', system-ui, -apple-system, sans-serif;
 		color: #000;
 		background: #fff;
-		overflow-x: hidden;
 		-webkit-font-smoothing: antialiased;
 	}
 

@@ -5,7 +5,9 @@
       "mcp__figma__get_metadata",
       "mcp__figma__get_design_context",
       "Bash(ls:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "WebFetch(domain:cdn.hackclub.com)",
+      "WebFetch(domain:user-cdn.hackclub-assets.com)"
     ]
   },
   "enabledPlugins": {
