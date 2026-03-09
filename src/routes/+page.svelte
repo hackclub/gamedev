@@ -706,7 +706,8 @@
 						<strong>$1500</strong> = 1 ticket + flight to a flagship hackathon</p>
 						<p style="opacity: 0.5">All donations are 100% tax deductible. All of our finances are <a href="https://hcb.hackclub.com/hq" target="_blank" style="text-decoration:underline">open source</a>.</p>
 					</div>
-					<a href="https://hcb.hackclub.com/donations/start/gamedev-fund" class="btn-pill donate-btn">Donate</a>
+					<!-- <a href="https://hcb.hackclub.com/donations/start/gamedev-fund" class="btn-pill donate-btn">Donate</a> -->
+					<a href="https://hcb.hackclub.com/donations/start/hq" class="btn-pill donate-btn">Donate</a>
 				</div>
 			</div>
 			<div class="donate-divider"></div>
