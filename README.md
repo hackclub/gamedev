@@ -1,42 +1,10 @@
-# sv
+<p align="center">
+<img width="600" alt="Hack Club is where high schoolers go from playing games to making games." src="https://github.com/user-attachments/assets/2b763964-feee-4f75-84dc-8cf439fb7a40" />
+  <br>
+  <br>
+  This is a site showing off the events Hack Club runs and <em>real</em> games made by teenagers.
+  <br>
+  <br>
+  <a href="https://gamedev.hackclub.com/?utm_source=github">gamedev.hackclub.com</a>
+</p>
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-pnpm dlx sv@0.12.5 create --template minimal --types ts --install pnpm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
