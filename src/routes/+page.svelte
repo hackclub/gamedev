@@ -1,4 +1,22 @@
 <script lang="ts">
+	let heroIdx = 0;
+	function heroReveal(img: HTMLImageElement) {
+		const idx = heroIdx++;
+		function reveal() {
+			const wrap = img.parentElement!;
+			const delay = idx * 60;
+			setTimeout(() => {
+				wrap.classList.add('visible');
+				setTimeout(() => wrap.classList.add('reveal'), 100);
+			}, delay);
+		}
+		if (img.complete && img.naturalWidth > 0) {
+			reveal();
+		} else {
+			img.addEventListener('load', reveal, { once: true });
+		}
+	}
+
 	interface Game {
 		title: string;
 		authors: { name: string; age: number; location: string }[];
@@ -257,40 +275,30 @@
 	<div class="hero-pattern"></div>
 	<div class="hero-pattern-fade"></div>
 	<div class="hero-games">
-		<!-- Top-left cluster -->
-		<img src="/images/hero-game-7.webp" alt="" class="game-shot g1" />
-		<img src="/images/hero-game-8.webp" alt="" class="game-shot g2" />
-		<img src="/images/hero-game-4.webp" alt="" class="game-shot g3" />
-		<!-- Top-center-left -->
-		<img src="/images/hero-game-10.webp" alt="" class="game-shot g4" />
-		<!-- Top-center-right -->
-		<img src="/images/hero-game-9.webp" alt="" class="game-shot g5" />
-		<!-- Top-right cluster -->
-		<img src="/images/hero-game-11.webp" alt="" class="game-shot g6" />
-		<img src="/images/hero-game-12.webp" alt="" class="game-shot g7" />
-		<img src="/images/hero-game-3.webp" alt="" class="game-shot g8" />
-		<!-- Left middle -->
-		<img src="/images/hero-game-1.webp" alt="" class="game-shot g9" />
-		<img src="/images/hero-game-2.webp" alt="" class="game-shot g10" />
-		<!-- Right middle -->
-		<img src="/images/hero-game-5.webp" alt="" class="game-shot g11" />
-		<img src="/images/hero-game-6.webp" alt="" class="game-shot g12" />
-		<!-- Left lower -->
-		<img src="/images/additional1.webp" alt="" class="game-shot g19" />
-		<!-- Right lower -->
-		<img src="/images/additional2.webp" alt="" class="game-shot g20" />
-		<!-- Top fill gaps -->
-		<img src="/images/additional3.webp" alt="" class="game-shot g21" />
-		<img src="/images/additional4.webp" alt="" class="game-shot g22" />
-		<img src="/images/additional5.webp" alt="" class="game-shot g23" />
-		<!-- Bottom-left (sloping inward) -->
-		<img src="/images/additional6.webp" alt="" class="game-shot g13" />
-		<img src="/images/additional7.webp" alt="" class="game-shot g14" />
-		<img src="/images/additional8.webp" alt="" class="game-shot g15" />
-		<!-- Bottom-right (sloping inward) -->
-		<img src="/images/additional9.webp" alt="" class="game-shot g16" />
-		<img src="/images/additional10.webp" alt="" class="game-shot g17" />
-		<img src="/images/additional11.webp" alt="" class="game-shot g18" />
+		<!-- DOM order = diagonal sweep (x*0.5 + y) for balanced reveal -->
+		<span class="game-shot g1"><img src="/images/hero-game-7.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g21"><img src="/images/additional3.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g2"><img src="/images/hero-game-8.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g3"><img src="/images/hero-game-4.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g4"><img src="/images/hero-game-10.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g22"><img src="/images/additional4.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g9"><img src="/images/hero-game-1.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g23"><img src="/images/additional5.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g10"><img src="/images/hero-game-2.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g5"><img src="/images/hero-game-9.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g7"><img src="/images/hero-game-12.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g19"><img src="/images/additional1.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g6"><img src="/images/hero-game-11.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g13"><img src="/images/additional6.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g8"><img src="/images/hero-game-3.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g14"><img src="/images/additional7.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g15"><img src="/images/additional8.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g11"><img src="/images/hero-game-5.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g12"><img src="/images/hero-game-6.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g20"><img src="/images/additional2.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g18"><img src="/images/additional11.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g17"><img src="/images/additional10.webp" alt="" use:heroReveal /></span>
+		<span class="game-shot g16"><img src="/images/additional9.webp" alt="" use:heroReveal /></span>
 	</div>
 	<div class="hero-content">
 		<p class="hero-heading-top">
@@ -799,8 +807,25 @@
 		height: 225px;
 		border: 5px solid #fff;
 		border-radius: 8px;
-		object-fit: cover;
+		background: #fff;
 		box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity 0.15s ease-out;
+	}
+	.game-shot img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		opacity: 0;
+		transition: opacity 0.5s ease-out;
+	}
+	:global(.game-shot.visible) {
+		opacity: 1;
+	}
+	:global(.game-shot.reveal) img {
+		opacity: 1;
 	}
 
 	/* Top-left cluster */
