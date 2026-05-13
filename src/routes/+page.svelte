@@ -29,11 +29,21 @@
 
 	const games: Game[] = [
 		{
-			title: 'prode dies',
-			authors: [{ name: 'Herby', age: 16, location: 'Canada' }],
-			description: 'A visual novel about a teenager trying to solve their own murder.',
-			image: '/images/prode-dies.webp', thumbnail: '/images/prode-dies.webp',
-			playUrl: 'https://herbeon.itch.io/prode-dies', color: [106, 86, 191]
+			title: 'Speedtickers',
+			authors: [
+				{ name: 'Juan', age: 14, location: 'Argentina' },
+				{ name: 'Agustin', age: 15, location: 'Argentina' }
+			],
+			description: 'A high-speed speedrun-focused platformer that pushes players to master momentum and precision.',
+			image: '/images/speedtickers.webp', thumbnail: '/images/speedtickers.webp',
+			playUrl: 'https://juanes10201.itch.io/speedtickers', color: [86, 111, 191]
+		},
+		{
+			title: 'Voidwatch',
+			authors: [{ name: 'Malcolm', age: 18, location: 'US' }],
+			description: 'A fast-paced top-down space shooter roguelike.',
+			image: '/images/voidwatch.webp', thumbnail: '/images/voidwatch.webp',
+			playUrl: 'https://store.steampowered.com/app/3764010/Voidwatch/', color: [191, 86, 96]
 		},
 		{
 			title: 'Specter',
@@ -63,23 +73,6 @@
 			description: 'A fast-paced PvP mace-swinging game where your goal is to die first.',
 			image: '/images/kamikamace.webp', thumbnail: '/images/kamikamace.webp',
 			playUrl: 'https://thatotherandrew.itch.io/kamikamace', color: [191, 89, 86]
-		},
-		{
-			title: 'Voidwatch',
-			authors: [{ name: 'Malcolm', age: 18, location: 'US' }],
-			description: 'A fast-paced top-down space shooter roguelike.',
-			image: '/images/voidwatch.webp', thumbnail: '/images/voidwatch.webp',
-			playUrl: 'https://store.steampowered.com/app/3764010/Voidwatch/', color: [191, 86, 96]
-		},
-		{
-			title: 'Speedtickers',
-			authors: [
-				{ name: 'Juan', age: 14, location: 'Argentina' },
-				{ name: 'Agustin', age: 15, location: 'Argentina' }
-			],
-			description: 'A high-speed speedrun-focused platformer that pushes players to master momentum and precision.',
-			image: '/images/speedtickers.webp', thumbnail: '/images/speedtickers.webp',
-			playUrl: 'https://juanes10201.itch.io/speedtickers', color: [86, 111, 191]
 		},
 		{
 			title: 'Bitdropper',
@@ -126,6 +119,13 @@
 			description: 'A game about fishing with a loop, made within 72 hours.',
 			image: '/images/gone-loopin.webp', thumbnail: '/images/gone-loopin.webp',
 			playUrl: 'https://bucketfish.itch.io/gone-loopin', color: [86, 141, 191]
+		},
+		{
+			title: 'prode dies',
+			authors: [{ name: 'Herby', age: 16, location: 'Canada' }],
+			description: 'A visual novel about a teenager trying to solve their own murder.',
+			image: '/images/prode-dies.webp', thumbnail: '/images/prode-dies.webp',
+			playUrl: 'https://herbeon.itch.io/prode-dies', color: [106, 86, 191]
 		}
 	];
 
@@ -1611,7 +1611,7 @@
 	.game-description {
 		font-size: 24px;
 		line-height: 1.45;
-		height: 70px;
+		height: 105px;
 		overflow: hidden;
 	}
 
