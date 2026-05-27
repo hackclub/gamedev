@@ -226,6 +226,7 @@
 		void el.offsetWidth;
 		el.classList.add('flash');
 	}
+
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} onkeydown={handleKeydown} />
@@ -764,7 +765,52 @@
 			<p class="footer-credit">Site by <a href="https://tongyu.dev/">Tongyu</a> & <a href="https://github.com/gusruben/">Augie</a></p>
 		{/if}
 	</div>
-	<div class="footer-tile"></div>
+	<div class="footer-tile">
+		<div class="footer-tile-overlay">
+			{#each Array(7) as _, i}
+				<svg
+					viewBox="0 1 1776 410"
+					preserveAspectRatio="xMidYMax meet"
+					xmlns="http://www.w3.org/2000/svg"
+					class="footer-svg"
+					aria-hidden="true"
+				>
+					<mask id="footer-mask-{i}" style="mask-type: luminance">
+						<image href="/images/footer-tile.webp" x="0" y="1" width="1776" height="410" />
+					</mask>
+					<g mask="url(#footer-mask-{i})">
+						<a href="https://juice.hackclub.com/games">
+							<path class="logo-poly" d="M715 263L679.5 288L582.5 301.5L548 326.5L484 342.5L428.5 326.5L439.5 271.5L415 236.5L403.5 189L464.5 157.5L560 173L600 142.5L784.5 110L755 263H715Z" fill="#98E997"/>
+						</a>
+						<a href="https://counterspell.hackclub.com">
+							<path class="logo-poly" d="M437 328.5V379V428.5L250.5 390.5L237.5 428.5H179.5L158 385.5L120.5 390.5L51 437.5L-25 422L6.5 367.5L29.5 312.5L40.5 289.5L29.5 255L63 226.5L158 274H220L349.5 307.5L405 262.5H450L437 328.5Z" fill="#E997B5"/>
+						</a>
+						<a href="https://overglade.hackclub.com">
+							<path class="logo-poly" d="M157 265C139.5 253.667 103.7 231 100.5 231L108 187L165 180V150L142.25 104.5L165 53L257 33.5L454.5 141L386 180L405 245.5L347 303L236 278L157 265Z" fill="#97E9BF"/>
+						</a>
+						<a href="https://flagship.hackclub.com">
+							<path class="logo-poly wrap-left" d="M86 193L2 243.5L-22.5 44L94 31.5L111 135.5L86 193Z" fill="#E9E197"/>
+						</a>
+						<a href="https://campfire.hackclub.com">
+							<path class="logo-poly" d="M771.5 191.5L796.5 154.5V173.5L1153.5 226.5L1140.5 338.5L796.5 294.5L762 263.5L771.5 191.5Z" fill="#E9C597"/>
+						</a>
+						<a href="https://milkyway.hackclub.com">
+							<path class="logo-poly" d="M745.5 255.5L782 299L1046.5 330L1068.5 338.5L1057.5 440.5L610.5 479L541 408L559.5 353L681.5 312L716 262.5L745.5 255.5Z" fill="#97D7E9"/>
+						</a>
+						<a href="https://daydream.hackclub.com">
+							<path class="logo-poly" d="M1107.5 397V437H1278.5L1786 359L1793.5 281L1738.5 258L1473.5 281L1375 292L1253 258L1163 268L1154 365.5L1107.5 397Z" fill="#E697E9"/>
+						</a>
+						<a href="https://flagship.hackclub.com">
+							<path class="logo-poly wrap-right" d="M1476 112L1540.5 253L1798 241L1816.5 187.5V67L1641.5 78L1551.5 67L1476 112Z" fill="#E9E197"/>
+						</a>
+						<a href="https://shiba.hackclub.com">
+							<path class="logo-poly" d="M1169 236L1018.5 204.5L1036.5 69H1342L1510 204.5L1518.5 262.5L1482 275L1311.5 255.5L1169 236Z" fill="#E99797"/>
+						</a>
+					</g>
+				</svg>
+			{/each}
+		</div>
+	</div>
 </footer>
 
 <style>
@@ -869,10 +915,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: center;
 		height: 100%;
 		text-align: center;
-		padding-bottom: 120px;
+		padding-top: 120px;
 	}
 
 	.hero-heading-top {
@@ -939,8 +985,9 @@
 
 	.hero-arrow {
 		opacity: 0.8;
-		position: relative;
-		top: 32px;
+		position: absolute;
+		bottom: 60px;
+		left: calc(50% - 20px);
 		animation: hero-arrow-float 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 	}
 
@@ -1960,9 +2007,50 @@
 		background: url('/images/footer-tile.webp') repeat-x;
 		background-size: auto 100%;
 		background-position: center bottom;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.footer-tile-overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		pointer-events: none;
+	}
+
+	.footer-svg {
+		height: 100%;
+		width: auto;
+		flex-shrink: 0;
+		display: block;
+		pointer-events: auto;
+	}
+
+	.footer-svg .logo-poly {
+		fill-opacity: 0;
+		pointer-events: all;
+		cursor: pointer;
+		transition: fill-opacity 0.6s ease-out;
+	}
+
+	.footer-svg .logo-poly:hover,
+	.footer-svg:has(.wrap-right:hover) + .footer-svg .wrap-left,
+	.footer-svg:has(+ .footer-svg .wrap-left:hover) .wrap-right {
+		fill-opacity: 1;
+		transition: fill-opacity 0.05s ease-in;
 	}
 
 	/* ===== RESPONSIVE ===== */
+	/* Scale up hero images on wider screens so they don't leave gaps around the edges */
+	@media (min-width: 1800px) {
+		.game-shot { width: 330px; height: 248px; }
+	}
+	@media (min-width: 2200px) {
+		.game-shot { width: 360px; height: 270px; }
+	}
+
 	/* Push hero images outward when viewport makes them crowd the hero text */
 	@media (max-width: 1500px) and (min-width: 769px) {
 		.g1, .g2, .g3, .g4, .g9, .g10, .g13, .g14, .g15, .g19, .g21, .g22 {
