@@ -310,7 +310,7 @@
 		<div class="hero-cta">
 			<a href="#donate" class="btn-pill">Donate</a>
 		</div>
-		<a href="https://hackclub.com/slack" class="hero-join">Teenager? Join Hack Club!</a>
+		<a href="https://hackclub.com" class="hero-join">Teenager? Join Hack Club!</a>
 		<div class="hero-arrow">
 			<svg width="40" height="20" viewBox="0 0 40 20" fill="none">
 				<path d="M2 2L20 16L38 2" stroke="#ec3750" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
