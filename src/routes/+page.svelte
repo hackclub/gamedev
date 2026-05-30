@@ -130,11 +130,11 @@
 	];
 
 	const events = [
-		{ id: 'juice', name: 'Juice', description: '100 teenagers built a game in two months, then ran a popup cafe in Shanghai for seven days.', url: 'https://juice.hackclub.com/games', location: 'Shanghai, China', startDate: '2025-04-04', endDate: '2025-04-11' },
-		{ id: 'daydream', name: 'Daydream', description: '100 high school game jams in 100 cities around the world, all on the same weekend.', url: 'https://daydream.hackclub.com', startDate: '2025-09-27', endDate: '2025-09-28' },
-		{ id: 'overglade', name: 'Overglade', description: '50 teenagers built games in three months, then flew to Singapore for an immersive, alternate-reality game jam over four days.', url: 'https://overglade.hackclub.com', location: 'Singapore', startDate: '2026-01-29', endDate: '2026-02-02' },
-		{ id: 'campfire-flagship', name: 'Campfire Flagship', description: 'Partnered with Open Sauce, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.', url: 'https://flagship.hackclub.com', location: 'Los Angeles, CA, USA', startDate: '2026-02-20', endDate: '2026-02-22' },
-		{ id: 'campfire-global', name: 'Campfire Global', description: 'Our largest game jam yet — 200 high school game jams in 200 cities around the world, all on the same weekend.', url: 'https://campfire.hackclub.com', startDate: '2026-02-28', endDate: '2026-03-01' }
+		{ id: 'juice', name: 'Juice', description: '100 teenagers built a game in two months, then ran a popup cafe in Shanghai for seven days.', url: 'https://juice.hackclub.com/games', location: 'Shanghai, China', startDate: '2025-04-04', endDate: '2025-04-11', status: 'EventCompleted' },
+		{ id: 'daydream', name: 'Daydream', description: '100 high school game jams in 100 cities around the world, all on the same weekend.', url: 'https://daydream.hackclub.com', startDate: '2025-09-27', endDate: '2025-09-28', status: 'EventCompleted' },
+		{ id: 'overglade', name: 'Overglade', description: '50 teenagers built games in three months, then flew to Singapore for an immersive, alternate-reality game jam over four days.', url: 'https://overglade.hackclub.com', location: 'Singapore', startDate: '2026-01-29', endDate: '2026-02-02', status: 'EventCompleted' },
+		{ id: 'campfire-flagship', name: 'Campfire Flagship', description: 'Partnered with Open Sauce, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.', url: 'https://flagship.hackclub.com', location: 'Los Angeles, CA, USA', startDate: '2026-02-20', endDate: '2026-02-22', status: 'EventCompleted' },
+		{ id: 'campfire-global', name: 'Campfire Global', description: 'Our largest game jam yet — 200 high school game jams in 200 cities around the world, all on the same weekend.', url: 'https://campfire.hackclub.com', startDate: '2026-02-28', endDate: '2026-03-01', status: 'EventCompleted' }
 	];
 
 	const videos = [
@@ -202,7 +202,7 @@
 				organizer: { '@id': 'https://hackclub.com#organization' },
 				...(e.location ? { location: { '@type': 'Place', name: e.location } } : {}),
 				eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-				eventStatus: 'https://schema.org/EventScheduled'
+				eventStatus: `https://schema.org/${e.status}`
 			})),
 			...videos.map((v) => ({
 				'@type': 'VideoObject',
@@ -438,7 +438,7 @@
 		<div class="line-dot" style="top:-5px;right:-5px;"></div>
 		<div class="line-dot" style="bottom:-5px;left:-5px;"></div>
 		<div class="line-dot" style="bottom:-5px;right:-5px;"></div>
-		<p><a href="https://hackclub.com" target="_blank">Hack Club</a> is a global nonprofit movement of 140,000 teenagers making cool stuff together. Every couple of weeks, we run events to empower and encourage students to dive deeper into game development.<br><br>Share this page with <a href="https://hack.club/games" style="text-decoration: underline; font-weight: normal">hack.club/games</a>.</p>
+		<p><a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a> is a global nonprofit movement of 140,000 teenagers making cool stuff together. Every couple of weeks, we run events to empower and encourage students to dive deeper into game development.<br><br>Share this page with <a href="https://hack.club/games" style="text-decoration: underline; font-weight: normal">hack.club/games</a>.</p>
 	</div>
 
 	<div class="bordered-content">
@@ -478,6 +478,7 @@
 										frameborder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 										allowfullscreen
+										loading="lazy"
 									></iframe>
 								</div>
 								<span class="watch-label">watch the video <span class="watch-arrow">↗</span></span>
@@ -546,6 +547,7 @@
 										frameborder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 										allowfullscreen
+										loading="lazy"
 									></iframe>
 								</div>
 								<span class="watch-label">watch the video <span class="watch-arrow">↗</span></span>
@@ -610,7 +612,7 @@
 							<img src="/images/campfire-flagship.webp" alt="Campfire Flagship" />
 						</div>
 						<h3 class="col-title">Campfire Flagship</h3>
-						<p class="col-desc">Partnered with <a href="https://opensauce.com" target="_blank" style="text-decoration: underline">Open Sauce</a>, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.</p>
+						<p class="col-desc">Partnered with <a href="https://opensauce.com" target="_blank" rel="noopener" style="text-decoration: underline">Open Sauce</a>, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.</p>
 					</div>
 				</div>
 				<div class="col-divider-v"></div>
@@ -826,7 +828,7 @@
 						<strong>$500</strong> = 1 ticket to a flagship hackathon<br/>
 						<strong>$650</strong> = 1 ticket + round-trip ground transportation to a flagship hackathon<br/>
 						<strong>$1500</strong> = 1 ticket + flight to a flagship hackathon</p>
-						<p style="opacity: 0.5">All donations are 100% tax deductible. All of our finances are <a href="https://hcb.hackclub.com/hq" target="_blank" style="text-decoration:underline">open source</a>.</p>
+						<p style="opacity: 0.5">All donations are 100% tax deductible. All of our finances are <a href="https://hcb.hackclub.com/hq" target="_blank" rel="noopener" style="text-decoration:underline">open source</a>.</p>
 					</div>
 					<a href="https://hcb.hackclub.com/donations/start/gamedev-fund" class="btn-pill donate-btn">Donate</a>
 				</div>
@@ -837,7 +839,7 @@
 				<div class="donate-col-inner">
 					<h3 class="donate-col-title">Contribute in other ways</h3>
 					<div class="donate-col-body">
-						<p><strong>Donate your space</strong> — we're running huge in-person hackathons & <a href="https://campfire.hackclub.com/" target="_blank" style="text-decoration: underline">game jams across the world</a>, and we'd love to use your space!</p>
+						<p><strong>Donate your space</strong> — we're running huge in-person hackathons & <a href="https://campfire.hackclub.com/" target="_blank" rel="noopener" style="text-decoration: underline">game jams across the world</a>, and we'd love to use your space!</p>
 						<p><strong>Donate 30 minutes of your time</strong> — do you have interesting stories or insights that you'd be willing to share? we'd love to have you for an AMA, or list a 30-minute call with you as a prize!</p>
 						<p><strong>Donate your game</strong> — do you have a published game? if you donate us bulk game keys, we'll use it to reward teenagers for making games!</p>
 					</div>
