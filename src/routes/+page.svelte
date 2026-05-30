@@ -129,6 +129,100 @@
 		}
 	];
 
+	const events = [
+		{ id: 'juice', name: 'Juice', description: '100 teenagers built a game in two months, then ran a popup cafe in Shanghai for seven days.', url: 'https://juice.hackclub.com/games', location: 'Shanghai, China', startDate: '2025-04-04', endDate: '2025-04-11' },
+		{ id: 'daydream', name: 'Daydream', description: '100 high school game jams in 100 cities around the world, all on the same weekend.', url: 'https://daydream.hackclub.com', startDate: '2025-09-27', endDate: '2025-09-28' },
+		{ id: 'overglade', name: 'Overglade', description: '50 teenagers built games in three months, then flew to Singapore for an immersive, alternate-reality game jam over four days.', url: 'https://overglade.hackclub.com', location: 'Singapore', startDate: '2026-01-29', endDate: '2026-02-02' },
+		{ id: 'campfire-flagship', name: 'Campfire Flagship', description: 'Partnered with Open Sauce, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.', url: 'https://flagship.hackclub.com', location: 'Los Angeles, CA, USA', startDate: '2026-02-20', endDate: '2026-02-22' },
+		{ id: 'campfire-global', name: 'Campfire Global', description: 'Our largest game jam yet — 200 high school game jams in 200 cities around the world, all on the same weekend.', url: 'https://campfire.hackclub.com', startDate: '2026-02-28', endDate: '2026-03-01' }
+	];
+
+	const videos = [
+		{
+			eventId: 'juice',
+			youtubeId: 'Gtjyyu82pw4',
+			name: 'We Opened a Gaming Cafe in Shanghai for a Week | ep. 2',
+			description: 'Behind-the-scenes video of Juice, where 100 teenagers built games in two months and then ran a popup gaming cafe in Shanghai for seven days.',
+			uploadDate: '2025-04-09T05:00:24-07:00',
+			duration: 'PT8M22S'
+		},
+		{
+			eventId: 'daydream',
+			youtubeId: 'vvdoW2gh9YU',
+			name: 'We Hosted a Game Jam in 100 Cities Simultaneously',
+			description: 'Recap of Daydream, where Hack Club ran 100 high school game jams in 100 cities around the world on the same weekend.',
+			uploadDate: '2025-10-14T08:01:47-07:00',
+			duration: 'PT8M20S'
+		}
+	];
+
+	const pageJsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebPage',
+				'@id': 'https://gamedev.hackclub.com#webpage',
+				url: 'https://gamedev.hackclub.com',
+				name: 'Hack Club Game Dev — Real games built by teenagers',
+				description: 'Real games built by teenagers through Hack Club\'s global game jams and flagship hackathons.',
+				isPartOf: { '@id': 'https://gamedev.hackclub.com#website' },
+				primaryImageOfPage: { '@type': 'ImageObject', url: 'https://gamedev.hackclub.com/ogimg.png' },
+				inLanguage: 'en-US',
+				about: { '@id': 'https://hackclub.com#organization' }
+			},
+			{
+				'@type': 'ItemList',
+				name: 'Real games built by teenagers',
+				description: 'Games designed and developed by high school students through Hack Club programs.',
+				numberOfItems: games.length,
+				itemListOrder: 'https://schema.org/ItemListUnordered',
+				itemListElement: games.map((g, i) => ({
+					'@type': 'ListItem',
+					position: i + 1,
+					item: {
+						'@type': 'VideoGame',
+						name: g.title,
+						description: g.description,
+						image: `https://gamedev.hackclub.com${g.image}`,
+						url: g.playUrl,
+						author: g.authors.map((a) => ({ '@type': 'Person', name: a.name })),
+						publisher: { '@id': 'https://hackclub.com#organization' },
+						inLanguage: 'en'
+					}
+				}))
+			},
+			...events.map((e) => ({
+				'@type': 'Event',
+				'@id': `https://gamedev.hackclub.com#event-${e.id}`,
+				name: e.name,
+				description: e.description,
+				url: e.url,
+				startDate: e.startDate,
+				endDate: e.endDate,
+				organizer: { '@id': 'https://hackclub.com#organization' },
+				...(e.location ? { location: { '@type': 'Place', name: e.location } } : {}),
+				eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+				eventStatus: 'https://schema.org/EventScheduled'
+			})),
+			...videos.map((v) => ({
+				'@type': 'VideoObject',
+				name: v.name,
+				description: v.description,
+				thumbnailUrl: [
+					`https://i.ytimg.com/vi/${v.youtubeId}/maxresdefault.jpg`,
+					`https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`
+				],
+				uploadDate: v.uploadDate,
+				duration: v.duration,
+				contentUrl: `https://www.youtube.com/watch?v=${v.youtubeId}`,
+				embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
+				publisher: { '@id': 'https://hackclub.com#organization' },
+				inLanguage: 'en',
+				about: { '@id': `https://gamedev.hackclub.com#event-${v.eventId}` }
+			}))
+		]
+	}).replace(/</g, '\\u003c');
+
 	const SLOT_LEFT = [0, 168, 336, 944, 1112];
 	const SLOT_WIDTH = [120, 120, 560, 120, 120];
 
@@ -231,6 +325,10 @@
 
 <svelte:window bind:innerWidth={windowWidth} onkeydown={handleKeydown} />
 
+<svelte:head>
+	{@html `<script type="application/ld+json">${pageJsonLd}</script>`}
+</svelte:head>
+
 {#snippet cartridgeInner(game: Game)}
 	<div class="side-hline"></div>
 	<div class="side-thumb-wrap"><img src={game.thumbnail} alt={game.title} /></div>
@@ -272,7 +370,7 @@
 {/snippet}
 
 <!-- HERO SECTION -->
-<section class="hero">
+<header class="hero">
 	<div class="hero-pattern"></div>
 	<div class="hero-pattern-fade"></div>
 	<div class="hero-games">
@@ -302,22 +400,23 @@
 		<span class="game-shot g16"><img src="/images/additional9.webp" alt="" use:heroReveal /></span>
 	</div>
 	<div class="hero-content">
-		<p class="hero-heading-top">
-			Hack Club is where <span class="underlined">high&nbsp;schoolers</span><br />
-			go from playing games
-		</p>
-		<h1 class="hero-heading-big">to making games.</h1>
+		<h1 class="hero-heading">
+			<span class="hero-heading-top">Hack Club is where <span class="underlined">high&nbsp;schoolers</span><br />go from playing games</span>
+			<span class="hero-heading-big">to making games.</span>
+		</h1>
 		<div class="hero-cta">
 			<a href="#donate" class="btn-pill">Donate</a>
 		</div>
 		<a href="https://hackclub.com" class="hero-join">Teenager? Join Hack Club!</a>
 		<div class="hero-arrow">
-			<svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+			<svg width="40" height="20" viewBox="0 0 40 20" fill="none" aria-hidden="true">
 				<path d="M2 2L20 16L38 2" stroke="#ec3750" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</div>
 	</div>
-</section>
+</header>
+
+<main>
 
 <!-- FULL-WIDTH BORDERED AREA -->
 <div class="bordered-wrapper">
@@ -393,10 +492,10 @@
 						</div>
 					</div>
 					<div class="event-photo-row">
-						<div class="row-photo"><img src="/images/juice-3.webp" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-4.webp" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-5.webp" alt="" /></div>
-						<div class="row-photo"><img src="/images/juice-6.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/juice-3.webp" alt="Teenagers playing games at the Juice popup cafe in Shanghai" loading="lazy" /></div>
+						<div class="row-photo"><img src="/images/juice-4.webp" alt="Players at the Juice popup cafe in Shanghai" loading="lazy" /></div>
+						<div class="row-photo"><img src="/images/juice-5.webp" alt="A teenage game developer at Juice in Shanghai" loading="lazy" /></div>
+						<div class="row-photo"><img src="/images/juice-6.webp" alt="The Juice popup cafe in Shanghai" loading="lazy" /></div>
 						<!-- <div class="row-photo"><img src="/images/juice-7.webp" alt="" /></div> -->
 					</div>
 				</div>
@@ -459,9 +558,9 @@
 						</div>
 					</div>
 					<div class="event-photo-row">
-						<div class="row-photo"><img src="/images/daydream-2.webp" alt="" /></div>
-						<div class="row-photo"><img src="/images/daydream-3.webp" alt="" /></div>
-						<div class="row-photo"><img src="/images/daydream-5.webp" alt="" /></div>
+						<div class="row-photo"><img src="/images/daydream-2.webp" alt="Teenagers at a Daydream game jam" loading="lazy" /></div>
+						<div class="row-photo"><img src="/images/daydream-3.webp" alt="High schoolers building games at Daydream" loading="lazy" /></div>
+						<div class="row-photo"><img src="/images/daydream-5.webp" alt="Teen game developers at a Daydream city" loading="lazy" /></div>
 						<!-- <div class="row-photo"><img src="/images/juice-8.webp" alt="" /></div> -->
 					</div>
 				</div>
@@ -681,6 +780,20 @@
 			{/if}
 		</div>
 	</section>
+
+	<!-- Full enumerated list of all games for accessibility + crawlers (the carousel only renders a sliding window) -->
+	<section class="sr-only" aria-label="All games built by teenagers">
+		<h2>All games built by teenagers</h2>
+		<ol>
+			{#each games as game}
+				<li>
+					<a href={game.playUrl}>{game.title}</a>
+					— by {game.authors.map((a) => `${a.name} (${a.age}, ${a.location})`).join(' and ')}.
+					{game.description}
+				</li>
+			{/each}
+		</ol>
+	</section>
 </div>
 
 <!-- DONATE SECTION -->
@@ -744,6 +857,8 @@
 	</div>
 </div>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
 	<div class="footer-black-line"></div>
@@ -779,31 +894,31 @@
 						<image href="/images/footer-tile.webp" x="0" y="1" width="1776" height="410" />
 					</mask>
 					<g mask="url(#footer-mask-{i})">
-						<a href="https://juice.hackclub.com/games">
+						<a href="https://juice.hackclub.com/games" aria-label="Juice — Hack Club's Shanghai game-dev program">
 							<path class="logo-poly" d="M715 263L679.5 288L582.5 301.5L548 326.5L484 342.5L428.5 326.5L439.5 271.5L415 236.5L403.5 189L464.5 157.5L560 173L600 142.5L784.5 110L755 263H715Z" fill="#98E997"/>
 						</a>
-						<a href="https://counterspell.hackclub.com">
+						<a href="https://counterspell.hackclub.com" aria-label="Counterspell — Hack Club's worldwide game jam">
 							<path class="logo-poly" d="M437 328.5V379V428.5L250.5 390.5L237.5 428.5H179.5L158 385.5L120.5 390.5L51 437.5L-25 422L6.5 367.5L29.5 312.5L40.5 289.5L29.5 255L63 226.5L158 274H220L349.5 307.5L405 262.5H450L437 328.5Z" fill="#E997B5"/>
 						</a>
-						<a href="https://overglade.hackclub.com">
+						<a href="https://overglade.hackclub.com" aria-label="Overglade — Hack Club's Singapore game jam">
 							<path class="logo-poly" d="M157 265C139.5 253.667 103.7 231 100.5 231L108 187L165 180V150L142.25 104.5L165 53L257 33.5L454.5 141L386 180L405 245.5L347 303L236 278L157 265Z" fill="#97E9BF"/>
 						</a>
-						<a href="https://flagship.hackclub.com">
+						<a href="https://flagship.hackclub.com" aria-label="Campfire Flagship — Hack Club's Los Angeles game-dev hackathon">
 							<path class="logo-poly wrap-left" d="M86 193L2 243.5L-22.5 44L94 31.5L111 135.5L86 193Z" fill="#E9E197"/>
 						</a>
-						<a href="https://campfire.hackclub.com">
+						<a href="https://campfire.hackclub.com" aria-label="Campfire Global — Hack Club's 200-city game jam">
 							<path class="logo-poly" d="M771.5 191.5L796.5 154.5V173.5L1153.5 226.5L1140.5 338.5L796.5 294.5L762 263.5L771.5 191.5Z" fill="#E9C597"/>
 						</a>
-						<a href="https://milkyway.hackclub.com">
+						<a href="https://milkyway.hackclub.com" aria-label="Milky Way — Hack Club program">
 							<path class="logo-poly" d="M745.5 255.5L782 299L1046.5 330L1068.5 338.5L1057.5 440.5L610.5 479L541 408L559.5 353L681.5 312L716 262.5L745.5 255.5Z" fill="#97D7E9"/>
 						</a>
-						<a href="https://daydream.hackclub.com">
+						<a href="https://daydream.hackclub.com" aria-label="Daydream — Hack Club's worldwide game jam">
 							<path class="logo-poly" d="M1107.5 397V437H1278.5L1786 359L1793.5 281L1738.5 258L1473.5 281L1375 292L1253 258L1163 268L1154 365.5L1107.5 397Z" fill="#E697E9"/>
 						</a>
-						<a href="https://flagship.hackclub.com">
+						<a href="https://flagship.hackclub.com" aria-label="Campfire Flagship — Hack Club's Los Angeles game-dev hackathon">
 							<path class="logo-poly wrap-right" d="M1476 112L1540.5 253L1798 241L1816.5 187.5V67L1641.5 78L1551.5 67L1476 112Z" fill="#E9E197"/>
 						</a>
-						<a href="https://shiba.hackclub.com">
+						<a href="https://shiba.hackclub.com" aria-label="Shiba — Hack Club program">
 							<path class="logo-poly" d="M1169 236L1018.5 204.5L1036.5 69H1342L1510 204.5L1518.5 262.5L1482 275L1311.5 255.5L1169 236Z" fill="#E99797"/>
 						</a>
 					</g>
@@ -921,7 +1036,10 @@
 		padding-top: 120px;
 	}
 
+	.hero-heading { display: contents; }
+
 	.hero-heading-top {
+		display: block;
 		font-family: 'Phantom Sans', sans-serif;
 		font-size: 48px;
 		font-weight: 400;
@@ -946,6 +1064,7 @@
 	}
 
 	.hero-heading-big {
+		display: block;
 		font-family: 'Zarathustra', Georgia, serif;
 		font-size: 88px;
 		font-weight: 400;

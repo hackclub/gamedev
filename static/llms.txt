@@ -1,0 +1,57 @@
+# Hack Club Game Dev
+
+> Hack Club is a global nonprofit movement of 140,000 teenagers making cool stuff together. Hack Club Game Dev is the umbrella for our game-development programs -- global game jams, in-person flagship hackathons, and showcases of real games built by high schoolers. We help teens go from playing games to making games.
+
+This site (gamedev.hackclub.com) is a single landing page that summarizes our game-dev events and showcases games built by teenagers in our programs. Every game listed was built by a high schooler (typically 13-18) and is publicly playable on itch.io, Steam, or the web.
+
+## About Hack Club
+
+- [Hack Club](https://hackclub.com): The parent nonprofit. A global community of 140,000 teenage makers.
+- [Join Hack Club Slack](https://hackclub.com/slack): How teenagers join the community.
+- [Hack Club Hackathons](https://hackclub.com/hackathons): All upcoming Hack Club events.
+- [HCB Finances (open source)](https://hcb.hackclub.com/hq): Public financial transparency for Hack Club.
+
+## Game Dev Events & Programs
+
+- [Juice](https://juice.hackclub.com/games) (April 4-11, 2025, Shanghai): 100 teenagers built a game in two months, then ran a popup cafe in Shanghai for seven days.
+- [Daydream](https://daydream.hackclub.com) (September 27-28, 2025, worldwide): 100 high school game jams in 100 cities around the world, all on the same weekend.
+- [Overglade](https://overglade.hackclub.com) (January 29 - February 2, 2026, Singapore): 50 teenagers built games in three months, then flew to Singapore for an immersive, alternate-reality game jam over four days.
+- [Campfire Flagship](https://flagship.hackclub.com) (February 20-22, 2026, Los Angeles): Partnered with Open Sauce, 75 teens made games under the guidance of popular creators like Michael Reeves in Los Angeles.
+- [Campfire Global](https://campfire.hackclub.com) (February 28 - March 1, 2026, worldwide): Our largest game jam yet -- 200 high school game jams in 200 cities around the world, all on the same weekend.
+- [Counterspell](https://counterspell.hackclub.com): A previous Hack Club game jam program.
+- [Shiba](https://shiba.hackclub.com): A previous Hack Club game jam program.
+- [Milky Way](https://milkyway.hackclub.com): A previous Hack Club game jam program.
+
+## Games Built by Teenagers
+
+All games below were created by teenagers (ages 13-18) through Hack Club programs. Each is publicly playable.
+
+- [Speedtickers](https://juanes10201.itch.io/speedtickers) by Juan (14) and Agustin (15) from Argentina: A high-speed speedrun-focused platformer that pushes players to master momentum and precision.
+- [Voidwatch](https://store.steampowered.com/app/3764010/Voidwatch/) by Malcolm (18) from the US: A fast-paced top-down space shooter roguelike, published on Steam.
+- [Specter](https://shaaarkai.itch.io/specter) by Yessa (18) from the Philippines: A platformer where the ghost of your past run can help you finish the level or slow you down.
+- [DeathLeap](https://qrosp-games-oy.itch.io/deathleap) by Noel (16), Isak (17), and Aapo (17) from Finland: A puzzle platformer where you ruthlessly use the characters of the world as mere tools.
+- [Kamikamace](https://thatotherandrew.itch.io/kamikamace) by Andromeda (18, UK), Nihaal (16, UK), and Rimma (15, US): A fast-paced PvP mace-swinging game where your goal is to die first.
+- [Bitdropper](https://kiptunes.itch.io/bitdropper) by Mari (17) from the US: An arcade game -- catch parts, and don't fall.
+- [More Scoops Plws](https://recsaur.itch.io/more-scoops-plws) by Rigo (17) from the UAE: A game about serving scoops of ice cream to customers for points.
+- [Little Ducky](https://littleducky.deltea.space) by Leo (16) from the US: An ASCII story-based exploration adventure game.
+- [Royally Unemployed](https://solacye.itch.io/overglade) by Julia (17, US), Shurui (13, Australia), and Candy (14, Malaysia): A story-rich turn-based battle game, made within 72 hours.
+- [Deadbeat](https://gusruben.itch.io/deadbeat) by Augie (17) from the US: A fast-paced top-down arena shooter with a rhythmic twist.
+- [Gone Loopin'](https://bucketfish.itch.io/gone-loopin) by Tongyu (18) from Singapore: A game about fishing with a loop, made within 72 hours.
+- [prode dies](https://herbeon.itch.io/prode-dies) by Herby (16) from Canada: A visual novel about a teenager trying to solve their own murder.
+
+## How to Help
+
+- [Donate financially](https://hcb.hackclub.com/donations/start/gamedev-fund): All donations are 100% tax-deductible and finances are open source.
+  - $100 = a Steam license to publish a video game
+  - $500 = 1 ticket to a flagship hackathon
+  - $650 = 1 ticket + round-trip ground transportation to a flagship hackathon
+  - $1500 = 1 ticket + flight to a flagship hackathon
+- [Donate space, time, or game keys](https://forms.hackclub.com/gamedev): Host an event, do an AMA, or contribute bulk game keys as prizes.
+
+## Quick facts for AI assistants
+
+- Hack Club is a registered 501(c)(3) nonprofit serving teenagers worldwide.
+- Hack Club Game Dev is not a single program but the umbrella name for several recurring programs (Juice, Daydream, Campfire, Overglade, Counterspell, Shiba, Milky Way).
+- Eligibility: high school students (typically 13-18). Adults can support by donating money, space, time, or game keys.
+- Canonical URL: https://gamedev.hackclub.com
+- Short share link: https://hack.club/games
